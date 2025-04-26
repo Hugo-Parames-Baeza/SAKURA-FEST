@@ -1,0 +1,191 @@
+@import url("./tipografias.css");
+
+:root{
+    --white: #fff;
+    --vino-tinto:#59192e;
+    --blue:#bfcad9;
+    --pink:#cc2656;
+}
+html{
+    font-size: 62.5%;
+    font-family: "Coolvetica", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--pink);
+    transition: all ease .3s;
+}
+body#w{
+    background-color: var(--white);
+}
+
+/**********************************************************HEADER**********************************************************/
+
+header{
+    padding: 3rem 6rem;
+    display: flex;
+    height: 20vh;
+}
+header nav {
+    flex: 1 1 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav > div:nth-of-type(1){
+    margin: auto;
+    flex: .6 1 100px;
+    display: flex;
+    justify-content: space-around;
+}
+header nav > div:nth-of-type(2){
+    flex: .08 1 100px;
+}
+
+header nav div.linkContainer {
+    flex: .2 1 20px;
+    padding-block: 1rem;
+    border:1px solid var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .3s;
+}
+header nav > div > div:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+header nav > div > div:hover .link {
+    color: var(--pink);
+}
+header .link{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+body#w header nav div.linkContainer{
+    border-color: var(--pink);
+}
+
+body#w header nav > div > div:hover{
+    background-color: var(--pink);
+}
+body#w header nav > div > div:hover .link{
+    color: var(--white);
+}
+
+body#w header .link{
+    color: var(--pink);
+}
+
+/****************************************************************************HOME****************************************************************************/
+
+main.home{
+    display: flex;
+    align-items: center;
+    padding-right: 5rem;
+    overflow: hidden;
+}
+main{
+    height: 80vh;
+    padding-inline: 8rem;
+}
+
+#PhrasePageHome, #beer{
+    width: 100%;
+}
+.beerContainer{
+    margin-left: auto;
+}
+#beer{
+    animation: chins .5s linear;
+    transition: all ease .3s;
+}
+#beer:hover{
+    transform: rotateZ(-10deg);
+}
+
+.homeTextContainer{
+    height: 70%;
+}
+.home_paragraph{
+    margin-top: 2rem;
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 9rem;
+}
+
+#barraTexto{
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 600;
+    background-color: var(--vino-tinto);
+    padding-block: 2rem;
+    letter-spacing: 2px;
+    border-bottom: black;
+    border-top: var(--white);
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+    display: flex;
+}
+
+#barraTexto p {
+    flex: 0 0 100%;
+}
+#barraTexto p:nth-of-type(1) {
+    transform: translateX(-70%);
+    animation: moverTexto 15s linear infinite;
+}
+#barraTexto p:nth-of-type(2) {
+    transform: translateX(-170%);
+    animation: moverTexto2 15s linear 7s infinite;
+}
+
+.counterContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.timeContainer{
+    flex: .2 1 10px;
+}
+.time{
+    font-family: "Samurai",sans-serif;
+    font-size: 15rem;
+    text-align: center;
+}
+.timeUnit{
+    font-size: 2rem;
+    text-align: center;
+}
+.time,.timeUnit{
+    color: var(--white);
+}
+/*****************************************************************ANIMACIONES*****************************************************************/
+
+@keyframes moverTexto {to{
+        transform: translateX(100%);
+    }
+}
+@keyframes moverTexto2 {to{
+        transform: translateX(0%);
+    }
+}
+@keyframes chins {
+    0%{
+        transform: rotateZ(-10deg);
+    }50%{
+        transform: rotateZ(10deg);
+    }100%{
+        transform: rotateZ(0deg);
+    }
+}

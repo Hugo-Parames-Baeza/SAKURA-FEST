@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Samurai";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/TIPOGRAFÍAS/CFSamuraiBob.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Coolvetica";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/TIPOGRAFÍAS/Coolvetica.otf") format("opentype");
+}

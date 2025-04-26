@@ -1,0 +1,1 @@
+const SITES = ["home", "line-up", "mapa", "galeria", "info", "tickets"];
