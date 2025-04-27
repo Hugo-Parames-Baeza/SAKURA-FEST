@@ -35,7 +35,7 @@ export default function Layout({ site, ancho }) {
           <ol className="list">
             {INFO[site].list.map((li, index) => (
               <li className="listItem" key={li}>
-                <span>{index}</span>-{li}
+                <span>{index+1}</span>-{li}
               </li>
             ))}
           </ol>
