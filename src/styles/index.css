@@ -1,191 +1,515 @@
 @import url("./tipografias.css");
 
-:root{
-    --white: #fff;
-    --vino-tinto:#59192e;
-    --blue:#bfcad9;
-    --pink:#cc2656;
+:root {
+  --white: #fff;
+  --vino-tinto: #59192e;
+  --blue: #bfcad9;
+  --pink: #cc2656;
+
+  --minimo: 1440px;
 }
-html{
-    font-size: 62.5%;
-    font-family: "Coolvetica", sans-serif;
+html {
+  font-size: 62.5%;
+  font-family: "Coolvetica", sans-serif;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: var(--pink);
-    transition: all ease .3s;
+body {
+  background-color: var(--pink);
+  transition: all ease 0.3s;
 }
-body#w{
-    background-color: var(--white);
+body#w {
+  background-color: var(--white);
 }
 
 /**********************************************************HEADER**********************************************************/
 
-header{
-    padding: 3rem 6rem;
-    display: flex;
-    height: 20vh;
+header {
+  padding: 3rem 6rem;
+  display: flex;
+  height: 20vh;
 }
 header nav {
-    flex: 1 1 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  flex: 1 1 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-header nav > div:nth-of-type(1){
-    margin: auto;
-    flex: .6 1 100px;
-    display: flex;
-    justify-content: space-around;
+header nav > div:nth-of-type(1) {
+  margin: auto;
+  flex: 0.6 1 100px;
+  display: flex;
+  justify-content: space-around;
 }
-header nav > div:nth-of-type(2){
-    flex: .08 1 100px;
+header nav > div:nth-of-type(2) {
+  flex: 0.08 1 100px;
 }
 
 header nav div.linkContainer {
-    flex: .2 1 20px;
-    padding-block: 1rem;
-    border:1px solid var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all ease .3s;
+  flex: 0.2 1 20px;
+  padding-block: 1rem;
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.3s;
 }
 header nav > div > div:hover {
-    background-color: #fff;
-    cursor: pointer;
+  background-color: #fff;
+  cursor: pointer;
 }
 header nav > div > div:hover .link {
-    color: var(--pink);
+  color: var(--pink);
 }
-header .link{
-    text-decoration: none;
-    color: var(--white);
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-body#w header nav div.linkContainer{
-    border-color: var(--pink);
+header .link {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-body#w header nav > div > div:hover{
+body#w header nav div.linkContainer {
+  border-color: var(--pink);
+}
+
+body#w header nav > div > div:hover {
+  background-color: var(--pink);
+}
+body#w header nav > div > div:hover .link {
+  color: var(--white);
+}
+
+body#w header .link {
+  color: var(--pink);
+}
+
+@media (width<1440px) {
+  header {
+    flex-direction: column;
+    padding: 1rem 2rem;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    z-index: 3000;
+    top: -100%;
+    transition: all ease 0.3s;
     background-color: var(--pink);
-}
-body#w header nav > div > div:hover .link{
-    color: var(--white);
-}
+  }
 
-body#w header .link{
-    color: var(--pink);
+  body#w header {
+    background-color: var(--white);
+  }
+
+  header > img {
+    width: 40%;
+  }
+
+  header nav {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  header nav > div:nth-of-type(1) {
+    flex-direction: column;
+    width: 100%;
+  }
+  header nav > div:nth-of-type(2) {
+    width: 100%;
+  }
+  header nav div.linkContainer {
+    flex-grow: 0.1;
+  }
+
+  header nav > div > div {
+    width: 80%;
+    margin: auto;
+  }
+
+  .headerM {
+    height: 7vh;
+    background-color: var(--vino-tinto);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+  }
+  .headerM img {
+    width: 14%;
+  }
+
+  .headerM button {
+    background-color: transparent;
+    border: none;
+    transition: all ease 0.2s;
+    border-radius: 5px;
+  }
+  .headerM button:active {
+    background-color: #fff;
+  }
+  .headerM button:active svg {
+    fill: var(--vino-tinto);
+  }
 }
 
 /****************************************************************************HOME****************************************************************************/
 
-main.home{
-    display: flex;
-    align-items: center;
-    padding-right: 5rem;
-    overflow: hidden;
+main.home {
+  display: flex;
+  align-items: center;
+  padding-right: 5rem;
+  overflow: hidden;
 }
-main{
-    height: 80vh;
-    padding-inline: 8rem;
-}
-
-#PhrasePageHome, #beer{
-    width: 100%;
-}
-.beerContainer{
-    margin-left: auto;
-}
-#beer{
-    animation: chins .5s linear;
-    transition: all ease .3s;
-}
-#beer:hover{
-    transform: rotateZ(-10deg);
+main {
+  height: 80vh;
+  padding-inline: 8rem;
 }
 
-.homeTextContainer{
-    height: 70%;
+#PhrasePageHome,
+#beer {
+  width: 100%;
 }
-.home_paragraph{
-    margin-top: 2rem;
-    color: var(--white);
-    font-size: 3rem;
-    font-weight: 700;
-    margin-left: 9rem;
+.beerContainer {
+  margin-left: auto;
+}
+#beer {
+  animation: chins 0.5s linear;
+  transition: all ease 0.3s;
+}
+#beer:hover {
+  transform: rotateZ(-10deg);
 }
 
-#barraTexto{
-    color: var(--white);
-    font-size: 3rem;
-    font-weight: 600;
-    background-color: var(--vino-tinto);
-    padding-block: 2rem;
-    letter-spacing: 2px;
-    border-bottom: black;
-    border-top: var(--white);
-    border-width: 1px;
-    border-style: solid;
-    overflow: hidden;
-    display: flex;
+.homeTextContainer {
+  height: 70%;
+}
+.home_paragraph {
+  margin-top: 2rem;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: 9rem;
+}
+
+#barraTexto {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 600;
+  background-color: var(--vino-tinto);
+  padding-block: 2rem;
+  letter-spacing: 2px;
+  border-bottom: black;
+  border-top: var(--white);
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  display: flex;
 }
 
 #barraTexto p {
-    flex: 0 0 100%;
+  flex: 0 0 100%;
 }
 #barraTexto p:nth-of-type(1) {
-    transform: translateX(-70%);
-    animation: moverTexto 15s linear infinite;
+  transform: translateX(-70%);
+  animation: moverTexto 15s linear infinite;
 }
 #barraTexto p:nth-of-type(2) {
-    transform: translateX(-170%);
-    animation: moverTexto2 15s linear 7s infinite;
+  transform: translateX(-170%);
+  animation: moverTexto2 15s linear 7s infinite;
 }
 
-.counterContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+.counterContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
-.timeContainer{
-    flex: .2 1 10px;
+.timeContainer {
+  flex: 0.2 1 10px;
 }
-.time{
-    font-family: "Samurai",sans-serif;
-    font-size: 15rem;
+.time {
+  font-family: "Samurai", sans-serif;
+  font-size: 15rem;
+  text-align: center;
+}
+.timeUnit {
+  font-size: 2rem;
+  text-align: center;
+}
+.time,
+.timeUnit {
+  color: var(--white);
+}
+
+@media (width<1440px) {
+  main {
+    height: 86vh;
+}
+
+main.home {
+      padding-inline: 0;
+    padding-block: 2rem;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  #beer {
+    width: 80%;
+  }
+
+  #PhrasePageHome {
+    width: 100%;
+  }
+
+  .homeTextContainer {
+    height: unset;
+    flex: 1 1 100px;
+    width: 90%;
+  }
+
+  .home_paragraph {
     text-align: center;
-}
-.timeUnit{
+    margin-left: 0;
     font-size: 2rem;
+  }
+
+  .counterContainer {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .time {
+    font-family: "Samurai", sans-serif;
+    font-size: 10rem;
     text-align: center;
+  }
+  .timeUnit {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .beerContainer {
+    padding: 3rem;
+    text-align: center;
+  }
+
+  #beer:hover {
+    transform: unset;
+  }
+
+  #barraTexto {
+    height: 7vh;
+    font-size: 2rem;
+  }
+  #barraTexto p {
+    flex-basis: 250%;
+  }
+  #barraTexto p:nth-of-type(1) {
+    transform: translateX(-90%);
+  }
+  #barraTexto p:nth-of-type(2) {
+    transform: translateX(-190%);
+  }
 }
-.time,.timeUnit{
-    color: var(--white);
+
+/*******************************************LINE UP*******************************************/
+main.mapa,
+main.line-up {
+  display: flex;
+  align-items: center;
 }
+.left {
+  align-self: start;
+  position: relative;
+  transition: filter ease 0.3s;
+}
+
+.left .title {
+  margin-top: -8%;
+  width: fit-content;
+  font-size: 25rem;
+  font-weight: 200;
+  color: var(--pink);
+  font-family: "Samurai", sans-serif;
+}
+
+.left img[alt="Imágen de frase japonesa"] {
+  margin-left: 6rem;
+  margin-top: -5%;
+  margin-bottom: 5%;
+}
+.left .description {
+  font-size: 2.1rem;
+  color: var(--vino-tinto);
+  font-weight: 700;
+}
+
+.left .listContainer {
+  overflow: hidden;
+  height: 34.99rem;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.left .list {
+  transition: transform ease 0.3s;
+}
+
+.left .listContainer .listItem {
+  color: var(--pink);
+  font-family: "Samurai", sans-serif;
+  font-size: 9rem;
+}
+.left .listContainer .listItem span{
+    color: var(--vino-tinto);
+}
+main.mapa .left .listContainer .listItem::marker {
+    color: var(--vino-tinto);
+}
+
+.left .buttonList {
+  position: absolute;
+  top: 90%;
+  left: 23%;
+  z-index: 1000;
+  background-color: var(--pink);
+  border: none;
+  font-family: "Coolvetica", sans-serif;
+  padding: 1rem;
+  transition: all ease 0.3s;
+}
+.left .buttonList:hover {
+  background-color: #9c1d41;
+}
+
+.right,
+.left {
+  flex: 1 1 100px;
+}
+.right {
+  display: flex;
+  justify-content: center;
+}
+.right img {
+  width: 64%;
+}
+
+@media (width<1440px) {
+  main.mapa,
+  main.line-up {
+    flex-direction: column;
+    padding: 2%;
+  }
+
+  .right {
+    order: 1;
+  }
+  .left {
+    order: 2;
+    align-self: unset;
+    position: unset;
+    transition: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left .title {
+    font-size: 12rem;
+    text-align: center;
+    width: unset;
+  }
+  .left img[alt="Imágen de frase japonesa"] {
+    margin: 0;
+    margin-bottom: 10%;
+    width: 20%;
+    align-self: center;
+  }
+
+  .left .description {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  .left .listContainer {
+    overflow: scroll;
+    height: 33rem;
+  }
+
+  .left .listContainer .listItem {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .left .buttonList {
+    display: none;
+  }
+
+  .left .list {
+    padding-bottom: 6rem;
+  }
+
+  .right img[src*="Japones"] {
+    mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 70%
+  );
+  }
+}
+
+/*****************************************TICKETS*****************************************/
+main.tickets {
+  display: flex;
+  flex-direction: column;
+}
+main.tickets > p:nth-of-type(1) {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
+  color: var(--pink);
+}
+main.tickets .time,
+main.tickets .timeUnit {
+  color: var(--vino-tinto);
+}
+
+main.tickets button {
+  margin: auto;
+  background-color: var(--pink);
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 900;
+  border: none;
+  padding: 1rem;
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
 /*****************************************************************ANIMACIONES*****************************************************************/
 
-@keyframes moverTexto {to{
-        transform: translateX(100%);
-    }
+@keyframes moverTexto {
+  to {
+    transform: translateX(100%);
+  }
 }
-@keyframes moverTexto2 {to{
-        transform: translateX(0%);
-    }
+@keyframes moverTexto2 {
+  to {
+    transform: translateX(0%);
+  }
 }
 @keyframes chins {
-    0%{
-        transform: rotateZ(-10deg);
-    }50%{
-        transform: rotateZ(10deg);
-    }100%{
-        transform: rotateZ(0deg);
-    }
+  0% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }

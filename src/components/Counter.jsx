@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { padZero } from "../utils/functions";
 export default function Counter() {
-  const [time, setTime] = useState("03-04-05-08");
+  const [time, setTime] = useState("00-00-00-00");
   useEffect(() => {
     const fecha = new Date();
     fecha.setDate(fecha.getDate() + 3);

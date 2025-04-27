@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import Counter from "../components/Counter";
 
 export default function Tickets() {
   return (
-    <div>Tickets</div>
-  )
+    <>
+      <p>ENTRADAS DISPONIBLES EN:</p>
+      <Counter />
+      <button disabled>COMPRAR</button>
+    </>
+  );
 }

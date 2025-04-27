@@ -1,38 +1,50 @@
-export default function Header({ handleClickenlaces, logo }) {
+export default function Header({ handleClickenlaces, logo, appear, setAppear }) {
   return (
-    <header>
+    <header style={{top:appear?"0%":"", left:appear?"0%":""}}>
         <img
           src={logo}
           alt="Logo del festival que contiene una botella y palabras japonesas"
           data-href="home"
-          onClick={handleClickenlaces}
+          onClick={(e)=>{
+            setAppear(false); handleClickenlaces(e)
+          }}
         />
       <nav>
         <div className="linksContainer">
           <div className="linkContainer">
-            <a className="link" onClick={handleClickenlaces} href="/line-up">
+            <a className="link" onClick={(e)=>{
+              setAppear(false); handleClickenlaces(e)
+            }} href="/line-up">
               LINE UP
             </a>
           </div>
           <div className="linkContainer">
-            <a className="link" onClick={handleClickenlaces} href="/mapa">
+            <a className="link" onClick={(e)=>{
+              setAppear(false); handleClickenlaces(e)
+            }} href="/mapa">
               MAPA
             </a>
           </div>
           <div className="linkContainer">
-            <a className="link" onClick={handleClickenlaces} href="/galeria">
+            <a className="link" onClick={(e)=>{
+              setAppear(false); handleClickenlaces(e)
+            }} href="/galeria">
               GALERÍA
             </a>
           </div>
           <div className="linkContainer">
-            <a className="link" onClick={handleClickenlaces} href="/info">
+            <a className="link" onClick={(e)=>{
+              setAppear(false); handleClickenlaces(e)
+            }} href="/info">
               INFO
             </a>
           </div>
         </div>
         <div className="tikectLinkContainer">
           <div className="linkContainer">
-            <a className="link" onClick={handleClickenlaces} href="/tickets">
+            <a className="link" onClick={(e)=>{
+              setAppear(false); handleClickenlaces(e)
+            }} href="/tickets">
               TICKETS
             </a>
           </div>
