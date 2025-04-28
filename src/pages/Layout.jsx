@@ -29,17 +29,29 @@ export default function Layout({ site, ancho }) {
     <>
       <div className="left" style={{ filter: filter ? "blur(4px)" : "" }}>
         <h2 className="title">{INFO[site].title}</h2>
-        <img src={INFO[site].imgJ} alt="Imágen de frase japonesa" />
+        <img loading="eager" src={INFO[site].imgJ} alt="Imágen de frase japonesa" />
         <p className="description">{INFO[site].description}</p>
-        <div className="listContainer">
-          <ol className="list">
-            {INFO[site].list.map((li, index) => (
-              <li className="listItem" key={li}>
-                <span>{index+1}</span>-{li}
-              </li>
-            ))}
-          </ol>
-        </div>
+        {site == "mapa" || site == "line-up" ? (
+          <div className="listContainer">
+            <ol className="list">
+              {INFO[site].list.map((li, index) => (
+                <li className="listItem" key={li}>
+                  <span>{index + 1}</span>-{li}
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : (
+          <div className="listContainer">
+            <div className="list">
+              {INFO.info.informacion.map((i, index) => (
+                <p className="description" key={index}>
+                  {i}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
         <button
           onClick={() => {
             ancho >= 1440 && handlerScrollDown();

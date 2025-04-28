@@ -5,6 +5,7 @@ export default function Home() {
     <>
       <div className="homeTextContainer">
         <img
+        loading="eager"
           id="PhrasePageHome"
           src="/OTROS/Frase japones Pagina 1.png"
           alt="Frase Japonesa"
