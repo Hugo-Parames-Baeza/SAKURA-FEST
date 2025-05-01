@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { INFO } from "../utils/constantes";
-import "../styles/layout.css"
-export default function Layout({ site, ancho, anchoB }) {
+import "../styles/layout.css";
+export default function Layout({ site }) {
   const [scroll, setScroll] = useState({
     scroll: 0,
     down: true,
@@ -26,10 +26,17 @@ export default function Layout({ site, ancho, anchoB }) {
 
   return (
     <>
-      <div className="left" >
+      <div className="left">
         <h2 className="title">{INFO[site].title}</h2>
-        <img loading="eager" src={INFO[site].imgJ} alt="Imágen de frase japonesa" />
-        {site == "mapa" || site == "line-up" &&<p className="description">{INFO[site].description}</p>}
+        <img
+          loading="eager"
+          src={INFO[site].imgJ}
+          alt="Imágen de frase japonesa"
+        />
+        {site == "mapa" ||
+          (site == "line-up" && (
+            <p className="description">{INFO[site].description}</p>
+          ))}
         {site == "mapa" || site == "line-up" ? (
           <div className="listContainer">
             <ol className="list">
@@ -52,16 +59,12 @@ export default function Layout({ site, ancho, anchoB }) {
           </div>
         )}
         <button
-          onClick={() => {
-            ancho >= 1024 && handlerScrollDown();
-          }}
+          onClick={handlerScrollDown}
           className="buttonList"
         >
           {!scroll.down ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width={anchoB/4}
-              height={anchoB/4}
               fill="#fff"
               className="bi bi-caret-up-fill"
               viewBox="0 0 16 16"
@@ -71,8 +74,6 @@ export default function Layout({ site, ancho, anchoB }) {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width={anchoB/4}
-              height={anchoB/4}
               fill="#fff"
               className="bi bi-caret-down-fill"
               viewBox="0 0 16 16"
@@ -82,15 +83,7 @@ export default function Layout({ site, ancho, anchoB }) {
           )}
         </button>
       </div>
-      <div
-        {...(ancho >= 1024
-          ? {
-              onMouseOver: () => setFilter(true),
-              onMouseLeave: () => setFilter(false),
-            }
-          : {})}
-        className="right"
-      >
+      <div className="right">
         <img src={INFO[site].imgR} alt={INFO[site].imgRDesc} />
       </div>
     </>

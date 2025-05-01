@@ -60,6 +60,10 @@ body#w header .link {
   color: var(--pink);
 }
 
+.headerM{
+  display: none;
+}
+
 @media (width<1440px) {
   header {
     padding: 2rem 3rem;
@@ -141,6 +145,9 @@ body#w header .link {
     border: none;
     transition: all ease 0.2s;
     border-radius: 5px;
+  }
+  .headerM button svg {
+    width: 7vw;
   }
   .headerM button:active {
     background-color: #fff;

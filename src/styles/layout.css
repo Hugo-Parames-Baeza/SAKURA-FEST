@@ -71,8 +71,11 @@ main.mapa .left .listContainer .listItem::marker {
   background-color: var(--pink);
   border: none;
   font-family: "Coolvetica", sans-serif;
-  padding: 1rem;
+  padding: .2rem;
   transition: all ease 0.3s;
+}
+.left .buttonList svg {
+  width: 2.5vw;
 }
 main.info .left .buttonList {
   left: 40%;
