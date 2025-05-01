@@ -94,7 +94,7 @@ body#w header .link {
     width: 100%;
     align-items: center;
     z-index: 3000;
-    top: -100%;
+    top: -150%;
     transition: all ease 0.3s;
     background-color: var(--pink);
   }
