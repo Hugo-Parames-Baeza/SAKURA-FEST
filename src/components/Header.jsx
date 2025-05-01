@@ -1,3 +1,5 @@
+import "../styles/header.css";
+
 export default function Header({ handleClickenlaces, logo, appear, setAppear }) {
   return (
     <header style={{top:appear?"0%":"", left:appear?"0%":""}}>

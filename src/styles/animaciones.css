@@ -1,0 +1,43 @@
+
+
+
+/*****************************************************************ANIMACIONES*****************************************************************/
+
+@keyframes moverTexto {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes moverTexto2 {
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes chins {
+  0% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes appearO {
+  from{
+    opacity: 0;
+    transform: translateY(10%);
+  }to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes appearOS {
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}

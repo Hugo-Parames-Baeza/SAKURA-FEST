@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { GALERIA } from "../utils/constantes";
+import "../styles/galeria.css";
 
 export default function Galeria() {
   const [selected, setSelected] = useState(null);

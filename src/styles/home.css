@@ -1,0 +1,169 @@
+/****************************************************************************HOME****************************************************************************/
+
+main.home {
+  display: flex;
+  align-items: center;
+  padding-right: 5rem;
+  overflow: hidden;
+}
+main {
+  height: 80vh;
+  padding-inline: 8rem;
+}
+
+#PhrasePageHome,
+#beer {
+  width: 100%;
+}
+.beerContainer {
+  margin: auto;
+}
+#beer {
+  animation: chins 0.5s linear;
+  transition: all ease 0.3s;
+}
+#beer:hover {
+  transform: rotateZ(-10deg);
+}
+
+.homeTextContainer {
+  height: 70%;
+}
+.home_paragraph {
+  margin-top: 2rem;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: 9rem;
+}
+
+#barraTexto {
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: var(--vino-tinto);
+  padding-block: 1.5rem;
+  letter-spacing: 2px;
+  border-bottom: black;
+  border-top: var(--white);
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  display: flex;
+}
+
+#barraTexto p {
+  flex: 0 0 100%;
+  width: fit-content;
+}
+#barraTexto p:nth-of-type(1) {
+  transform: translateX(-100%);
+  animation: moverTexto 15s linear infinite;
+}
+#barraTexto p:nth-of-type(2) {
+  transform: translateX(-200%);
+  animation: moverTexto2 15s linear 7s infinite;
+}
+
+.counterContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.timeContainer {
+  flex: 0.2 1 10px;
+}
+.time {
+  font-family: "Samurai", sans-serif;
+  font-size: 15rem;
+  text-align: center;
+}
+.timeUnit {
+  font-size: 2rem;
+  text-align: center;
+}
+.time,
+.timeUnit {
+  color: var(--white);
+}
+
+@media (width<1024px) {
+  main {
+    height: 86vh;
+  }
+
+  main.home {
+    padding-inline: 0;
+    padding-block: 2rem;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  #beer {
+    width: 80%;
+  }
+
+  #PhrasePageHome {
+    width: 100%;
+  }
+
+  .homeTextContainer {
+    height: unset;
+    flex: 1 1 100px;
+    width: 90%;
+  }
+
+  .home_paragraph {
+    text-align: center;
+    margin-left: 0;
+    font-size: 2rem;
+  }
+
+  .counterContainer {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .time {
+    font-family: "Samurai", sans-serif;
+    font-size: 10rem;
+    text-align: center;
+  }
+  .timeUnit {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .beerContainer {
+    padding: 3rem;
+    text-align: center;
+  }
+
+  #beer:hover {
+    transform: unset;
+  }
+
+  #barraTexto {
+    height: 7vh;
+    font-size: 2rem;
+  }
+  #barraTexto p {
+    flex-basis: 250%;
+  }
+  #barraTexto p:nth-of-type(1) {
+    transform: translateX(-90%);
+  }
+  #barraTexto p:nth-of-type(2) {
+    transform: translateX(-190%);
+  }
+}
+@media (width<=375px){
+  #barraTexto p:nth-of-type(1) {
+    transform: translateX(-100%);
+  }
+  #barraTexto p:nth-of-type(2) {
+    transform: translateX(-200%);
+  }
+  
+}

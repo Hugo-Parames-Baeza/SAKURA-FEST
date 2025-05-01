@@ -10,7 +10,7 @@ import { useMemo, useState } from "react";
 export default function App() {
   const { handleClickenlaces, logo, site } = useNavigate();
   const ancho = useMemo(() => window.innerWidth, []);
-  const anchoB = useMemo(() => window.innerWidth / 10, []);
+  const anchoB = useMemo(() => window.innerWidth / 15, []);
   const [appear, setAppear] = useState(false);
   return (
     <>
@@ -20,7 +20,7 @@ export default function App() {
         handleClickenlaces={handleClickenlaces}
         logo={logo}
       />
-      {ancho < 1440 && (
+      {ancho < 1024 && (
         <div
           style={{ backgroundColor: appear && "#cc2656" }}
           className="headerM"
@@ -51,7 +51,7 @@ export default function App() {
             case "line-up":
             case "info":
             case "mapa":
-              return <Layout ancho={ancho} site={site} />;
+              return <Layout ancho={ancho} anchoB={anchoB} site={site} />;
             case "galeria":
               return <Galeria />;
             case "tickets":

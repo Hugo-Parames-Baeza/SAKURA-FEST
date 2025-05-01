@@ -1,4 +1,4 @@
-import React from "react";
+import "../styles/home.css";
 import Counter from "../components/Counter";
 export default function Home() {
   return (

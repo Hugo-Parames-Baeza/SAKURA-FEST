@@ -1,0 +1,41 @@
+/*****************************************TICKETS*****************************************/
+main.tickets {
+    display: flex;
+    flex-direction: column;
+  }
+  main.tickets > p:nth-of-type(1) {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--pink);
+  }
+  main.tickets .time,
+  main.tickets .timeUnit {
+    color: var(--vino-tinto);
+  }
+  
+  main.tickets button {
+    margin: auto;
+    background-color: var(--pink);
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 900;
+    border: none;
+    padding: 1rem;
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+  
+  @media (width<1024px) {
+    main.tickets > p.titulo{
+      margin-top: auto;
+    }
+  
+    main.tickets .counterContainer{
+      margin-bottom: auto;
+    }
+  
+    main.tickets button {
+      margin:0;
+    }
+  }

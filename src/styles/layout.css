@@ -1,0 +1,217 @@
+/*******************************************LINE UP*******************************************/
+main.mapa,
+main.line-up,
+main.info {
+  display: flex;
+  align-items: center;
+}
+main.mapa .left,
+main.line-up .left,
+main.info {
+  align-self: start;
+  transition: filter ease 0.3s;
+}
+
+.left .title {
+  margin-top: -6%;
+  width: fit-content;
+  font-size: 15rem;
+  font-weight: 200;
+  color: var(--pink);
+  font-family: "Samurai", sans-serif;
+}
+
+.left img[alt="Imágen de frase japonesa"] {
+  margin-left: 6rem;
+  margin-top: -2%;
+  margin-bottom: 5%;
+  width: 5vw;
+}
+.left .description {
+  font-size: 2.1rem;
+  color: var(--vino-tinto);
+  font-weight: 700;
+  margin-bottom: 5%;
+}
+
+.left .listContainer {
+  overflow: hidden;
+  height: 25vh;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0 70%,
+    rgba(0, 0, 0, 0)
+  );
+}
+main.mapa .left .listContainer {
+  height: 50vh;
+}
+
+.left .list {
+  transition: transform ease 0.3s;
+}
+
+.left .listContainer .listItem {
+  color: var(--pink);
+  font-family: "Samurai", sans-serif;
+  font-size: 5rem;
+}
+.left .listContainer .listItem span {
+  color: var(--vino-tinto);
+}
+main.mapa .left .listContainer .listItem::marker {
+  color: var(--vino-tinto);
+}
+
+.left .buttonList {
+  position: absolute;
+  top: 90%;
+  left: 30%;
+  z-index: 1000;
+  background-color: var(--pink);
+  border: none;
+  font-family: "Coolvetica", sans-serif;
+  padding: 1rem;
+  transition: all ease 0.3s;
+}
+main.info .left .buttonList {
+  left: 40%;
+}
+.left .buttonList:hover {
+  background-color: #9c1d41;
+}
+
+.right,
+.left {
+  flex: 1 1 100px;
+}
+.right {
+  display: flex;
+  justify-content: center;
+}
+.right img {
+  width: 40vw;
+}
+main.info .right img {
+  width: 10vw;
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+}
+main.info .left .listContainer p {
+  font-size: 2rem;
+}
+
+@media (width>=1440px) {
+  .left .listContainer {
+    height: 33vh;
+  }
+  .right img {
+    width: 30vw;
+  }
+  main.info .right img {
+    width: 9vw;
+  }
+}
+@media (width>=2000px) {
+  .left .listContainer {
+    height: 45vh;
+  }
+  .left .listContainer .listItem {
+    font-size: 8rem;
+  }
+  .left .description {
+    font-size: 3rem;
+  }
+  main.info .left .listContainer p {
+    font-size: 4rem;
+  }
+}
+
+@media (width<1024px) {
+  main.mapa,
+  main.line-up,
+  main.info {
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+  }
+
+  .right {
+    order: 1;
+  }
+  .left {
+    width: 100%;
+    order: 2;
+    transition: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left .title {
+    font-size: 12rem;
+    text-align: center;
+    width: unset;
+  }
+  main.info .left .title {
+    font-size: 8rem;
+  }
+  .left img[alt="Imágen de frase japonesa"] {
+    margin: 0;
+    margin-bottom: 10%;
+    align-self: center;
+  }
+
+  .left .description {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  main.info .left .description {
+    font-size: 2rem !important;
+    padding-inline: 1rem !important;
+  }
+  .left .listContainer {
+    overflow: scroll;
+    height: 33rem;
+  }
+
+  .left .listContainer .listItem {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .left .buttonList {
+    display: none;
+  }
+
+  .left .list {
+    padding-bottom: 6rem;
+  }
+
+  .right img[src*="Japones"] {
+    mask-image: radial-gradient(ellipse at center, black 60%, transparent 70%);
+  }
+  .right img {
+    width: 90vw;
+  }
+  main.info .right img {
+    width: 40vw;
+    mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  }
+}
+
+
+@media (width<=768px) {
+  .left .title {
+    font-size: 8rem;
+  }
+  main.info .left .title{
+    font-size: 6rem;
+  }
+  .left img[alt="Imágen de frase japonesa"] {
+    width: 7%;
+  }
+}
+@media (width<=425px) {
+  .left img[alt="Imágen de frase japonesa"] {
+    width: 10%;
+  }
+}

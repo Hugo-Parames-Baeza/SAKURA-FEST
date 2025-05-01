@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { INFO } from "../utils/constantes";
-export default function Layout({ site, ancho }) {
+import "../styles/layout.css"
+export default function Layout({ site, ancho, anchoB }) {
   const [scroll, setScroll] = useState({
     scroll: 0,
     down: true,
   });
-
-  const [filter, setFilter] = useState(false);
 
   const handlerScrollDown = () => {
     setScroll((prev) => {
@@ -27,10 +26,10 @@ export default function Layout({ site, ancho }) {
 
   return (
     <>
-      <div className="left" style={{ filter: filter ? "blur(4px)" : "" }}>
+      <div className="left" >
         <h2 className="title">{INFO[site].title}</h2>
         <img loading="eager" src={INFO[site].imgJ} alt="Imágen de frase japonesa" />
-        <p className="description">{INFO[site].description}</p>
+        {site == "mapa" || site == "line-up" &&<p className="description">{INFO[site].description}</p>}
         {site == "mapa" || site == "line-up" ? (
           <div className="listContainer">
             <ol className="list">
@@ -54,15 +53,15 @@ export default function Layout({ site, ancho }) {
         )}
         <button
           onClick={() => {
-            ancho >= 1440 && handlerScrollDown();
+            ancho >= 1024 && handlerScrollDown();
           }}
           className="buttonList"
         >
           {!scroll.down ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
+              width={anchoB/4}
+              height={anchoB/4}
               fill="#fff"
               className="bi bi-caret-up-fill"
               viewBox="0 0 16 16"
@@ -72,8 +71,8 @@ export default function Layout({ site, ancho }) {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
+              width={anchoB/4}
+              height={anchoB/4}
               fill="#fff"
               className="bi bi-caret-down-fill"
               viewBox="0 0 16 16"
@@ -84,7 +83,7 @@ export default function Layout({ site, ancho }) {
         </button>
       </div>
       <div
-        {...(ancho >= 1440
+        {...(ancho >= 1024
           ? {
               onMouseOver: () => setFilter(true),
               onMouseLeave: () => setFilter(false),

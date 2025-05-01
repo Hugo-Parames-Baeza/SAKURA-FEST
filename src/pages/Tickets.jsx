@@ -1,5 +1,5 @@
-import React from "react";
 import Counter from "../components/Counter";
+import "../styles/tickets.css"
 
 export default function Tickets() {
   return (
